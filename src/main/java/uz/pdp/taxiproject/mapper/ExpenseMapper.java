@@ -1,0 +1,19 @@
+package uz.pdp.taxiproject.mapper;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import uz.imv.lmssystem.dto.ExpenseDTO;
+import uz.imv.lmssystem.dto.response.CreateExpenseResponse;
+import uz.imv.lmssystem.entity.Expense;
+
+@Mapper(componentModel = "spring")
+public interface ExpenseMapper {
+
+    @Mapping(target = "employeeName", source = "employee.name")
+    @Mapping(target = "employeeSurname", source = "employee.surname")
+    CreateExpenseResponse toResponse(Expense entity);
+
+    @Mapping(target = "employeeName", source = "employee.name")
+    @Mapping(target = "employeeSurname", source = "employee.surname")
+    ExpenseDTO toDTO(Expense expense);
+}
