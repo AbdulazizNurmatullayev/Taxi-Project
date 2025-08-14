@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: taxi-project
+  profiles:
+    active: dev
+
+
